@@ -1,0 +1,42 @@
+<head>
+</head>
+<body>
+
+<style type="text/css">
+	table, th, td{
+		border: 1px solid black;
+	}
+</style>
+
+<table>
+	<th>Title</th>
+	<th>First Name</th>
+    <th>Last Name</th>
+    <th>AlbumID</th>
+
+{% for line in posts %}
+	<tr>
+		<td>{{line.title}}</td>
+		<td>{{line.fname}}</td>
+        <td>{{line.lname}}</td>
+        <td>{{line.albumID}}</td>
+	</tr>
+{% endfor %}
+</table>
+
+<br>
+<br>
+<br>
+<a href="/home">Home</a>
+<br>
+<br>
+
+<a href="/select_criteria_loggedin">Back</a>
+<br>
+<br>
+
+
+</body>
+
+
+</html>

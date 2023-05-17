@@ -1,0 +1,41 @@
+<html>
+<head>
+</head>
+<body>
+
+<style type="text/css">
+	table, th, td{
+		border: 1px solid black;
+	}
+</style>
+
+
+<table>
+	<th>First Name</th>
+	<th>Last Name</th>
+    <th>Title</th>
+    <th>Release Date</th>
+    <th>URL</th>
+
+{% for line in posts %}
+	<tr>
+		<td>{{line.fname}}</td>
+		<td>{{line.lname}}</td>
+        <td>{{line.title}}</td>
+        <td>{{line.releaseDate}}</td>
+        <td>{{line.songURL}}</td>
+	</tr>
+{% endfor %}
+</table>
+
+<br>
+<br>
+<a href="/home">Home</a>
+<br>
+<br>
+<a href="/logout">Logout</a>
+
+</body>
+
+
+</html>

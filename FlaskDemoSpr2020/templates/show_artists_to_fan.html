@@ -1,0 +1,28 @@
+<html>
+<head>
+</head>
+<body>
+
+<form action="/fan_an_artist" method="POST">
+    <h3>Fan an artist</h3>
+    <select name="artistID">
+        {% for artist in artists %}
+            <option value="{{ artist.artistID }}">{{ artist.fname }} {{ artist.lname}}</option>
+        {% endfor %}
+    </select><br><br>
+    <br>
+    <br>
+    <input type="submit" value="Fan" />
+</form>
+
+<br>
+<br>
+<a href="/home">Home</a>
+<br>
+<br>
+<a href="/logout">Logout</a>
+
+</body>
+
+
+</html>

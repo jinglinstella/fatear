@@ -1,0 +1,56 @@
+<html>
+<head>
+</head>
+<body>
+
+
+
+Specify search criteria in one or more of the following options:
+<br>
+
+<form action="/display_songs" method="GET">
+
+<h3>Genre:</h3>
+{% for line in genre_list %}
+<input type="checkbox" name="genre" value="{{line.genre}}">{{line.genre}}</input>
+	<br>
+{% endfor %}
+
+
+<h3>Artist(Select One):</h3>
+{% for line in artist_list %}
+<input type="checkbox" name="artist" value="{{line.artist}}">{{line.artist}}</input>
+<br>
+{% endfor %}
+
+
+<h3>Average Rating:</h3>
+<label for="rating">Above: </label>
+<input type="number" id="rating" name="rating" step="0.1" min="0" max="5">
+<br>
+
+<br>
+<br>
+
+<input type="submit" value="Submit">
+
+</form>
+
+<br>
+<a href="/login">Login</a>
+<br>
+<br>
+
+<a href="/register">Register</a>
+<br>
+<br>
+
+<a href="/">Back</a>
+<br>
+<br>
+
+
+</body>
+
+
+</html>

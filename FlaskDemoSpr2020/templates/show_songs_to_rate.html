@@ -1,0 +1,39 @@
+<html>
+<head>
+</head>
+<body>
+
+{% if error %}
+    <p class="error"><strong>Error:</strong> {{error}}</p>
+{% endif %}
+
+<form action="/submit_rating" method="POST">
+    <h3>Rate A Song</h3>
+    <select name="songID">
+        {% for song in songs %}
+            <option value="{{ song.songID }}">{{ song.title }}</option>
+        {% endfor %}
+    </select><br><br>
+{#    <textarea name="review" placeholder="Write your review here" required></textarea><br>#}
+    {% for rating in ratings %}
+    <input type="radio" name="star" value={{rating}}>{{rating}}</input>
+	    <br>
+    {% endfor %}
+    <br>
+    <br>
+    <input type="submit" value="Submit Rating" />
+</form>
+
+<br>
+<br>
+<a href="/home">Home</a>
+<br>
+<br>
+<a href="/logout">Logout</a>
+
+</body>
+
+</body>
+
+
+</html>

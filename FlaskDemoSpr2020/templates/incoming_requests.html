@@ -1,0 +1,47 @@
+<html>
+<head>
+</head>
+<body>
+
+<style type="text/css">
+	table, th, td{
+		border: 1px solid black;
+	}
+</style>
+
+<table>
+	<th>Username</th>
+	<th>First Name</th>
+    <th>Last Name</th>
+    <th>Nickname</th>
+    <th>Actions</th>
+
+{% for line in posts %}
+	<tr>
+		<td>{{line.username}}</td>
+		<td>{{line.fname}}</td>
+        <td>{{line.lname}}</td>
+        <td>{{line.nickname}}</td>
+        <td>
+            <form action="/process_request" method="POST">
+                <input type="hidden" name="requesting_user" value="{{line.username}}">
+                <input type="submit" name="action" value="Accept">
+                <input type="submit" name="action" value="Reject">
+            </form>
+        </td>
+	</tr>
+{% endfor %}
+</table>
+
+<br>
+<br>
+<a href="/home">Home</a>
+<br>
+<br>
+<a href="/logout">Logout</a>
+
+
+</body>
+
+
+</html>
